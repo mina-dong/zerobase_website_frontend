@@ -1,0 +1,298 @@
+.wrap{
+    background-color: white;
+    width: 80%;
+    max-width: 1920px;
+    margin: 0 auto;
+}
+
+/*black-bg*/
+.black-bg{
+    background-color: black;
+    width: 100%;
+    height: 3000px;
+    left: 0;
+    position: absolute;
+}
+
+
+/*헤더*/
+
+header{
+    text-align: center;
+    padding-top: 20px;
+    position: relative;
+}
+
+header .gnb{
+    width: 100%;
+
+    display: grid;
+    grid-template-columns: 200px 1fr 300px;
+    grid-template-rows: auto auto;
+    grid-template-areas: 
+    "logo gnb-menu menu"
+    "search search search";
+
+    color: white;
+
+}
+
+#kirbnb{
+    width: 60%;
+}
+
+header .gnb .logo{
+    grid-area: logo;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+header .gnb .gnb-menu{
+    grid-area: gnb-menu;
+
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+header .gnb .gnb-menu ul{
+    width: 70%;
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    /* margin 0 auto 가운데에*/
+}
+
+header .gnb .gnb-menu ul li{
+    cursor: pointer;
+    font-weight: bold;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+
+
+header .gnb .gnb-menu ul li:hover{
+   color: gray;
+  }
+
+header .gnb .gnb-menu ul li:hover::before{
+    content: "";
+    height: 2px;
+    width: 5px;
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%,0); /*가운데에부여, before와 차이?*/
+  }
+  
+header .gnb .gnb-menu ul .active::before{
+    content: "";
+    height: 2px;
+    width: 15px;
+    background-color: white;
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translate(-50%,0); /*가운데에부여*/
+}
+
+  
+header .gnb .menu{
+    grid-area: menu;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-weight: bold;
+    width: 80%;
+    margin-left: 20%;
+}
+
+
+header .gnb .menu .menu-hover{
+    padding: 10px 10px;
+    border-radius: 30px;
+}
+
+header .gnb .menu .menu-hover:hover{
+    background-color: rgba(172,172,172,0.5);
+}
+
+header .gnb .menu .profile{
+    background-color: white;
+    color: gray;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+header .gnb .search{
+    grid-area: search;
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+
+header .gnb .search .searchul{
+    background-color: white;
+    color: black;
+    display: flex;
+    border-radius: 50px;
+}
+
+
+
+header .gnb .search .searchul li{
+    width: 25%;
+    text-align: left;
+    padding: 20px 50px 20px 20px;
+    font-weight: bold;
+    border-radius: 50px;
+    position: relative;
+}
+
+
+header .gnb .search .searchul li::after{
+    position: absolute;
+    /*relative와 absolute*/
+    content: "";
+    width: 1px;
+    height: 80%;
+    background-color: greenyellow;
+    right: 0;
+    top:50%;
+    transform: translate(0,-50%) ;
+    
+}
+
+header .gnb .search .searchul li:last-of-type::after{
+    display: none;
+    /*마지막에는 효과를 안 줄수도*/
+}
+
+
+header .gnb .search .searchul li:hover{
+    background-color: lightgrey;
+}
+
+header .gnb .search .searchul li span{
+    color: gray;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+/*공지*/
+
+.notice{
+    background-color: greenyellow;
+    border-radius: 14px ;
+    text-align: center;
+    height: 320px;
+
+    position: relative;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.notice p{
+    font-size: 2.3rem;
+    /*rem*/
+    color: white;
+    font-weight: bold;
+    line-height: 1.8rem;
+    margin-bottom: 2rem;
+
+}
+
+.notice button{
+    border: 1px solid white;
+    padding: 5px 15px;
+    color: white;
+    background-color: inherit; /*inherit*/
+    font-weight: bold;
+    border-radius: 12px;
+
+}
+
+/*메인배너*/
+.mainBanner{
+    border-radius: 14px ;
+    text-align: center;
+    height: 600px;
+
+    position: relative;
+
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+
+    background: linear-gradient(yellow , darkgreen);
+    padding-bottom: 50px;
+}
+
+.mainBanner .content p{
+    color: white;
+    font-size: 2.3rem;
+    font-weight: bold;
+    line-height: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+/*idea*/
+.city{
+    position: relative;
+    display: flex;
+    width: 100%;
+}
+
+
+.city .card{
+    width: 25%;
+    margin-right: 30px;
+}
+
+.city .card:nth-last-of-type(1){
+    margin-right: 0px;
+}
+
+.city .card img{
+    width: 100%;
+    height: 200px;    
+    display: block;
+    /* block */
+    border-radius: 15px 15px 0px 0px;
+}
+
+.city .card figcaption{
+    background-color: olivedrab;
+    border-radius: 0px 0px 15px 15px;
+    height: 200px;
+    padding: 24px 16px;
+    color: white;
+}
+
+.city .card figcaption p{
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.city .card figcaption span{
+    font-size: 12px;
+    margin-left: 2px;
+}
+
+
+/*expression*/
+
+.expression{
+    
+}
